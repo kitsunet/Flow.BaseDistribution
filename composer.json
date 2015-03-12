@@ -6,8 +6,23 @@
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/kitsunet/TYPO3.Flow"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/kitsunet/Flowpack.ComposerPlugin"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/kitsunet/Flow.BuildEssentials"
+        }
+    ],
     "require": {
-        "typo3/flow": "dev-master",
+        "flowpack/composer-plugin": "dev-master",
+        "typo3/flow": "dev-composerplugin as dev-master",
         "typo3/welcome": "dev-master",
         "typo3/fluid": "@dev",
         "typo3/eel": "@dev",
@@ -15,10 +30,11 @@
     },
     "require-dev": {
         "typo3/kickstart": "dev-master",
-        "typo3/buildessentials": "dev-master",
+        "typo3/buildessentials": "dev-composerplugin as dev-master",
         "phpunit/phpunit": "4.5.*",
         "mikey179/vfsstream": "1.4.*"
     },
+    "minimum-stability": "dev",
     "suggest": {
         "ext-pdo_sqlite": "For running functional tests out-of-the-box this is required"
     },
